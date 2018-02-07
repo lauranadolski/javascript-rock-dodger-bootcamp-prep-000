@@ -52,20 +52,20 @@ function createRock(x) {
 /*** End the game by clearing `gameInterval`, removing all ROCKS from the DOM, and removing the `moveDodger` event listener.
  * Finally, alert "YOU LOSE!" to the player. */
 function endGame() {
-  function rockRemoval() {
-    var getEm = document.getElementsByClassName('rock');
-    while (getEm.length > 0) {
-      getEm[0].parentNode.removeChild(getEm[0]);
-    }
-  }
+  // function rockRemoval() {
+  //   var getEm = document.getElementsByClassName('rock');
+  //   while (getEm.length > 0) {
+  //     getEm[0].parentNode.removeChild(getEm[0]);
+  //   }
+  // }
 
   function rocksRemoval() {
     for (var i = ROCKS.length; i > 0; i--) {
-      ROCKS.pop();
+      ROCKS[i].remove();
     }
   }
   clearInterval(gameInterval);
-  rockRemoval();
+  // rockRemoval();
   rocksRemoval();
   window.removeEventListener('keydown', moveDodger);
   alert("YOU LOSE!");
