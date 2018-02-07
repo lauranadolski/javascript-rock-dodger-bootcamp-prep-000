@@ -59,14 +59,16 @@ function endGame() {
   //   }
   // }
 
-  function rocksRemoval() {
-    for (var i = ROCKS.length; i > 0; i--) {
-      ROCKS[i].remove();
-    }
-  }
+  // function rocksRemoval() {
+  //   for (var i = ROCKS.length; i > 0; i--) {
+  //     ROCKS[i].remove();
+  //   }
+  // }
   clearInterval(gameInterval);
   // rockRemoval();
-  rocksRemoval();
+  for (var i = ROCKS.length; i > 0; i--) {
+    ROCKS[i].remove();
+  }
   window.removeEventListener('keydown', moveDodger);
   alert("YOU LOSE!");
   location.reload();
